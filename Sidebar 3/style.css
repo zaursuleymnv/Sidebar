@@ -1,0 +1,260 @@
+/* ======================================================================== */ 
+
+ /*                      NOT RELATED TO THE TTUTORIAL                        */
+
+/* ======================================================================== */
+
+
+*{
+	
+	
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	outline: none;
+	list-style: none;
+
+}
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	outline: none;
+	list-style: none;
+}
+
+:root {
+  --step--2: clamp(0.69rem, calc(0.58rem + 0.60vw), 1.00rem);
+  --step--1: clamp(0.83rem, calc(0.67rem + 0.81vw), 1.25rem);
+  --step-0: clamp(1.00rem, calc(0.78rem + 1.10vw), 1.56rem);
+  --step-1: clamp(1.20rem, calc(0.91rem + 1.47vw), 1.95rem);
+  --step-2: clamp(1.44rem, calc(1.05rem + 1.95vw), 2.44rem);
+  --step-3: clamp(1.73rem, calc(1.21rem + 2.58vw), 3.05rem);
+  --step-4: clamp(2.07rem, calc(1.39rem + 3.40vw), 3.82rem);
+  --step-5: clamp(2.49rem, calc(1.60rem + 4.45vw), 4.77rem);
+	
+	/* Font style */
+	
+	--ff-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	
+	/* Color style */
+	
+	/*
+	--color-primary:#c51350;
+	--color-secondary:#ff9a3c;
+	--color-body:#333;
+	--color-bg: #006600;
+	--color-primary-dark:#007f67;
+	--color-error:#cc3333;
+	--color-success:#4bb544;
+	--color-link:#cdcdcc;
+	--color-border:darkgrey;
+	--bs:#ffa857;
+	*/
+	
+	--color-primary: #0575E6;
+	--color-secondary: #6dd5ed;
+	--color-primary-light:#8dc6ff;
+	--color-primary-dark:#021B79;
+	--color-error:#cc3333;
+	--color-success:#4bb544;
+	--color-link:#606470;
+	--color-text:#5f6769;
+	--color-header-dark:#393e46;
+	--color-background:#f5f9ee;
+	--color-border-sc:#ececec;
+	--color-border-focus:#69c2ff;
+	--color-border:#d3d6db;
+	--bs:#ffa857;
+	--color-percentage:#5f6769;
+	--color-header-light:#9ba6a5;
+	--color-border-focus:#a9d7f6;
+	--color-input-background:#f5f9ee;
+	--gradient: linear-gradient(135deg var(--color-primary), var(--color-secondary));
+	
+}
+
+body {
+    min-height:  100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: var(--ff-primary);
+  }
+
+
+/* ======================================================================== */ 
+
+ /*                      RELATED TO THE TTUTORIAL                        */
+
+/* ======================================================================== */
+
+
+
+
+body {
+	background: #6441A5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2a0845, #6441A5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2a0845, #6441A5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+button {
+	border: 0;
+	outline: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
+:is(.burger, .logo, .sidebar) {
+	position: fixed;
+}
+
+.burger {
+	top: 0;
+	left: 0;
+	width: 73px;
+	height: 73px;
+	background-image: url(assets/icon-burger.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 2;
+	transition: .2s;
+}
+
+body.open .burger {
+	background-image: url(assets/icon-close.svg);
+}
+
+@media(width >= 700px) {
+	.burger {
+		display: none;
+	}
+}
+
+.logo {
+	top: 12px;
+	left: 55px;
+	width: 50px;
+	height: 50px;
+	scale: .8;
+	z-index: 2;
+	transition: .4s;
+}
+
+@media(width >= 700px) {
+	.logo {
+		left: 11px;
+	}
+}
+
+@media(width <= 700px) {
+	body.open > .logo {
+		transform: translate(28px);
+	}
+}
+
+.sidebar {
+	top: 0;
+	left: 0;
+	width: 73px;
+	height: 100%;
+	/* background: #3a316e; */
+	background: #592e79;
+	z-index: 1;
+	transition: .4s;
+}
+
+@media(width < 700px) {
+	.sidebar {
+		transform: translate(-100%, 0);
+	}
+
+	body.open .sidebar {
+		transform: translate(0, 0);
+	}
+}
+
+.sidebar .sidebar-header {
+	display: grid;
+	place-items: center;
+	height: 73px;
+	background: rgba(0, 0, 0, .1);
+
+}
+
+.sidebar > nav {
+	display: grid;
+}
+
+.sidebar > nav:not(:last-child) {
+	border-bottom: 1px solid #84577c;
+	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+}
+
+.sidebar > nav > button{
+	position: relative;
+	display: grid;
+	place-items: center;
+	width: 100%;
+	height: 56px;
+}
+
+.sidebar > nav > button > img{
+	width: 24px;
+	height: 24px;
+}
+
+.sidebar > nav > button > span{
+	position: absolute;
+	top: 50%;
+	left: 120%;
+	transform: translate(0, -50%);
+	color: #f9f9f9;
+	background: rgba(0, 0, 0, .7);
+	font-family:'Times New Roman', Times, serif;
+	font-size: var(--step--2);
+	font-weight: 100;
+	padding: 1rem;
+	border-radius: .4rem;
+	letter-spacing: 2.2px;
+	line-height: 1;
+	filter: blur(3px);
+	opacity: 0;
+	visibility: hidden;
+	transition: .3s;
+}
+
+@media(width >= 700px) {
+	.sidebar > nav > button:hover > span {
+		filter: blur(0);
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.copy {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-30%, -50%);
+	font-size: var(--step-0);
+	font-weight: 200;
+}
+
+.copy p {
+	color: #deddde;
+}
+
+.copy a {
+	color: #bc70ff;
+	font-size: var(--step--1);
+	font-weight: 100;
+	letter-spacing: 1px;
+}
+

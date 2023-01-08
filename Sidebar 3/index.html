@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Zaur">
+    <meta descryption content="Presentation of website">
+    <meta name="keywords" content="technology, cyber security, software">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+	<!-- <link href="https://fonts.googleapis.com/css2 family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+	<link href="https://fonts.googleapis.com/css2 family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet"/> -->
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Sidebar 3</title>
+</head>
+<body>
+    <button type="button" class="burger" onclick="toggleSidebar()"></button>
+    <img src="assets/profile-pic (17).png" class="logo" alt="">
+    <nav class="sidebar">
+        <header class="sidebar-header"></header>
+        <nav>
+            <button type="button">
+                <img src="assets/icon-home.svg" alt="">
+                <span>Home</span>
+            </button>
+            <button type="button">
+                <img src="assets/icon-settings.svg" alt="">
+                <span>Settings</span>
+            </button>
+        </nav>
+        <nav>
+            <button type="button">
+                <img src="assets/icon-blockchain.svg" alt="">
+                <span>Blockchick</span>
+            </button>
+            <button type="button">
+                <img src="assets/icon-database.svg" alt="">
+                <span>DataRiver</span>
+            </button>
+            <button type="button">
+                <img src="assets/icon-speaker.svg" alt="">
+                <span>AudioVibe</span>
+            </button>
+            <button type="button">
+                <img src="assets/icon-acoustic.svg" alt="">
+                <span>SoundBlast</span>
+            </button>
+        </nav>
+        <nav>
+            <button type="button">
+                <img src="assets/icon-folders.svg" alt="">
+                <span>Folders</span>
+            </button>
+            <button type="button">
+                <img src="assets/icon-levels.svg" alt="">
+                <span>Levels</span>
+            </button>
+            <button type="button">
+                <img src="assets/icon-accounts.svg" alt="">
+                <span>Accounts</span>
+            </button>
+            <button type="button">
+                <img src="assets/icon-lock.svg" alt="">
+                <span>Security</span>
+            </button>
+        </nav>
+    </nav>
+
+    <div class="copy">
+        <p>
+            Inspired by <a href="https://github.com/zaursuleymnv" target="_blank">Zaur Suleymanlı</a>
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        const toggleSidebar = () => document.body.classList.toggle("open");
+    </script>
+</body>
+</html>
