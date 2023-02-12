@@ -1,0 +1,188 @@
+/* ======================================================================== */
+/*                      NOT RELATED TO THE TTUTORIAL                        */
+/* ======================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+}
+
+:root {
+  --step--2: clamp(0.69rem, calc(0.58rem + 0.60vw), 1.00rem);
+  --step--1: clamp(0.83rem, calc(0.67rem + 0.81vw), 1.25rem);
+  --step-0: clamp(1.00rem, calc(0.78rem + 1.10vw), 1.56rem);
+  --step-1: clamp(1.20rem, calc(0.91rem + 1.47vw), 1.95rem);
+  --step-2: clamp(1.44rem, calc(1.05rem + 1.95vw), 2.44rem);
+  --step-3: clamp(1.73rem, calc(1.21rem + 2.58vw), 3.05rem);
+  --step-4: clamp(2.07rem, calc(1.39rem + 3.40vw), 3.82rem);
+  --step-5: clamp(2.49rem, calc(1.60rem + 4.45vw), 4.77rem);
+}
+
+html, body {
+  height: 100%;
+}
+
+/* ======================================================================== */
+/*                      RELATED TO THE TTUTORIAL                        */
+/* ======================================================================== */
+body {
+  background-color: #131313;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 73px;
+  height: 100%;
+  background-color: #008E60;
+  -webkit-transition: width 0.3s;
+  -ms-transition: width 0.3s;
+  transition: width 0.3s;
+}
+.sidebar.show {
+  width: 270px;
+}
+:is(.sidebar.show .sidebar-nav > button > span.badge, .sidebar.show .sidebar-footer > button > span.badge) {
+  opacity: 0;
+  visibility: hidden;
+}
+.sidebar .sidebar-inner {
+  width: 270px;
+  height: 100%;
+  padding-bottom: 1rem;
+}
+.sidebar .sidebar-inner .sidebar-header {
+  height: 73px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.sidebar .sidebar-inner .sidebar-header .burger {
+  width: 73px;
+  height: 73px;
+  background-image: url(../assets/icon-burger.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.sidebar .sidebar-inner .sidebar-header .burger.show {
+  background-image: url(../assets/icon-close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.sidebar .sidebar-inner .sidebar-header .sidebar-header-logo {
+  height: 24px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.1s;
+  -ms-transition: 0.1s;
+  transition: 0.1s;
+}
+.sidebar .sidebar-inner .sidebar-header .sidebar-header-logo.show {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.sidebar .sidebar-inner .sidebar-nav {
+  padding-top: 1rem;
+  flex: 1 1 auto;
+}
+.sidebar button {
+  position: relative;
+  width: 73px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 1.5rem;
+}
+.sidebar button img {
+  width: 28px;
+  height: 28px;
+}
+.sidebar button span.badge {
+  top: 50%;
+  left: 120%;
+  transform: translate(0, -50%);
+  color: #f9f9f9;
+  background: #008E60;
+  font-size: var(--step--2);
+  font-weight: 100;
+  padding: 1rem;
+  letter-spacing: 2.2px;
+  line-height: 1;
+  opacity: 0;
+  visibility: hidden;
+}
+.sidebar button:hover span.badge {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.sidebar button .span {
+  color: #f9f9f9;
+  font-size: var(--step--1);
+  font-weight: 200;
+  letter-spacing: 2px;
+  line-height: 1;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.1s;
+  -ms-transition: 0.1s;
+  transition: 0.1s;
+}
+.sidebar button .span.show {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  animation: appear 0.3s both;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    translate: 0 10px;
+  }
+  100% {
+    opacity: 1;
+    translate: 0;
+  }
+}
+.copy {
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  font-size: var(--step-0);
+}
+.copy p {
+  color: #B0A8BA;
+  font-weight: 300;
+}
+.copy p a {
+  color: #66BD77;
+  text-decoration: none;
+  font-size: var(--step--1);
+  font-weight: 200;
+}/*# sourceMappingURL=style.css.map */

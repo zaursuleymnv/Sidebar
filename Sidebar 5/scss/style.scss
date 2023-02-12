@@ -1,0 +1,157 @@
+@import 'partial/variables';
+@import 'partial/mixins';
+@import 'partial/reset';
+
+body {
+    background-color: $bg;
+}
+
+button{
+    border: 0;
+    outline: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+// :is(.sidebar, .sidebar-inner) {
+//     position: absolute;
+// }
+
+.sidebar{
+    width: 73px;
+    height: 100%;
+    background-color: $sidebarBg;
+    @include transition(width .3s);
+
+    &.show {
+        width: 270px;
+    }
+    
+    :is(&.show .sidebar-nav > button > span.badge, 
+        &.show .sidebar-footer > button > span.badge ) {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .sidebar-inner{
+        width: 270px;
+        height: 100%;
+        padding-bottom: 1rem;
+
+        .sidebar-header {
+            // gap: 1.2rem;
+            height: 73px;
+            background: rgba($color: #000000, $alpha: .1);
+
+            .burger {
+                width: 73px;
+                height: 73px;
+                background-image: url(#{$assetPath}/icon-burger.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                &.show {
+                    background-image: url(#{$assetPath}/icon-close.svg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+
+            .sidebar-header-logo {
+                height: 24px;
+                opacity: 0;
+                visibility: hidden;
+                @include transition(.1s);
+                &.show {
+                    opacity: 1;
+                    visibility: visible;
+                    @include transition(.3s ease);
+                }
+            }
+        }
+        .sidebar-nav {
+            padding-top: 1rem;
+            flex: 1 1 auto;
+        }
+    }
+
+    button{
+        position: relative;
+        width: 73px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 0 1.5rem;
+
+        img {
+            width: 28px;
+            height: 28px;
+        }
+
+        span.badge {
+	        top: 50%;
+	        left: 120%;
+	        transform: translate(0, -50%);
+            color: #f9f9f9;
+	        background: $sidebarBg;
+	        font-size: var(--step--2);
+	        font-weight: 100;
+	        padding: 1rem;
+	        letter-spacing: 2.2px;
+	        line-height: 1;
+            opacity: 0;
+            visibility: hidden;
+        }
+        &:hover span.badge {
+            opacity: 1;
+            visibility: visible;
+            @include transition(all .2s ease);
+        }
+
+        .span {
+            color: $span-main-color;
+            font-size: var(--step--1);
+            font-weight: 200;
+            letter-spacing: 2px;
+            line-height: 1;
+            opacity: 0;
+            visibility: hidden;
+            @include transition(.1s);
+            &.show{
+                opacity: 1;
+                visibility: visible;
+                @include transition(all .3s ease);
+                animation: appear 0.3s both;
+            }
+        }
+    }
+}
+@keyframes appear {
+    0% {
+      opacity: 0;
+      translate: 0 10px;
+    }
+    100% {
+      opacity: 1;
+      translate: 0;
+    }
+}
+
+.copy {
+	top: 50%;
+	left: 50%;
+	transform: translate(-40%, -50%);
+	font-size: var(--step-0);
+
+    p {
+        color: $inspiredText;
+        font-weight: 300;
+
+        a {
+            color: $zaurGitHubLink;
+            text-decoration: none;
+            font-size: var(--step--1);
+            font-weight: 200;
+        }
+    }
+}
